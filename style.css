@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'Varela-Round';
+    src: url(./fonts/VarelaRound-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    font-family: 'Varela-Round', sans-serif;
+    color: #130E24;
+}
+
+body {
+    background-color: #E0B1CB;
+}
+
+.containerHeader {
+    text-align: center;
+    background-color: #9F86C0;
+    font-size: 2rem;
+    margin-bottom: 24px;
+}
+
+.textHeader {
+    padding: 2.5rem;
+}
+
+footer {
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.textFooter {
+    text-decoration: none;
+    color: black;
+}
+
+.textFooter:hover {
+    text-decoration: underline;
+}
+
+.containerAction {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.containerGameboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 454px;
+    height: 454px;
+    margin: 20px auto;
+}
+
+.cell {
+    background-color: rgb(205, 205, 205);
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.cell:hover {
+    background-color: #41a8d058;
+}
+
+.containerButton {
+    text-align: center;
+}
+
+.buttonReset {
+    font-size: 3rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #5E548E;
+    color: #130E24;
+    cursor: pointer;
+}
+
+.buttonReset:hover {
+    background-color: #9F86C0;
+}
+
+.x-hover:hover::after {
+    content: "X";
+    opacity: 0.4;
+}
+
+.o-hover:hover::after {
+    content: "O";
+    opacity: 0.4;
+}
