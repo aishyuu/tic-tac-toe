@@ -50,7 +50,6 @@ function cellClick(e) {
 
     cell.innerText = turn;
     boardState[cell.dataset.index] = turn;
-    // console.log(boardState);
 
     if(turn == PLAYER_X) {
         turn = PLAYER_O;
@@ -59,7 +58,6 @@ function cellClick(e) {
         turn = PLAYER_X;
         textTurn.innerText = `Player ${PLAYER_X}'s Turn`
     }
-    // console.log(e);
     
     setHoverText(cells);
     checkWinner();
@@ -77,7 +75,6 @@ function checkWinner() {
             cellValue1 === cellValue2 &&
             cellValue1 === cellValue3
         ) {
-            console.log(cellValue1);
             gameOverScreen(cellValue1);
             return;
         }
@@ -92,7 +89,6 @@ function checkWinner() {
 }
 
 function gameOverScreen(winnerText) {
-    console.log(winnerText);
     let text = "Draw!";
     if(winnerText != null) {
         text = `Winner is ${winnerText}!`;
