@@ -5,8 +5,10 @@ let turn = PLAYER_X;
 const boardState = Array(cells.length);
 boardState.fill(null);
 
-buttonReset = document.querySelector('.buttonReset');
-textTurn = document.querySelector('.textTurn');
+const buttonReset = document.querySelector('.buttonReset');
+const textTurn = document.querySelector('.textTurn');
+const gameOverContainer = document.querySelector('.containerGameOver');
+const gameOverText = document.querySelector('.textGameOver');
 
 buttonReset.addEventListener('click', () => {
     initial(cells);
@@ -22,6 +24,7 @@ function initial(cellSet) {
     textTurn.innerText = `Player X's Turn`;
     boardState.fill(null);
     setHoverText(cellSet);
+    gameOverContainer.style.display = "none";
 }
 
 function setHoverText(cellSet) {
@@ -74,18 +77,28 @@ function checkWinner() {
             cellValue1 === cellValue2 &&
             cellValue1 === cellValue3
         ) {
-            console.log('Winner Found!');
+            console.log(cellValue1);
+            gameOverScreen(cellValue1);
             return;
         }
     }
 
     for(let i = 0; i < boardState.length; i++) {
         if(boardState[i] == null) {
-            console.log("No current winner");
             return;
         }
     };
-    console.log("Draw");
+    gameOverScreen(null);
+}
+
+function gameOverScreen(winnerText) {
+    console.log(winnerText);
+    let text = "Draw!";
+    if(winnerText != null) {
+        text = `Winner is ${winnerText}!`;
+    }
+    gameOverContainer.style.display = "block";
+    gameOverText.innerText = text;
 }
 
 const winningCombinations = [

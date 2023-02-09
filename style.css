@@ -95,3 +95,13 @@ footer {
     content: "O";
     opacity: 0.4;
 }
+
+.containerGameOver {
+    display: none;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.textGameOver {
+    font-size: 2.5rem;
+}
